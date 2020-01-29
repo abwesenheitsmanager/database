@@ -1,5 +1,8 @@
 import Sequelize from 'sequelize';
 
+/**
+ * Config for database Connection
+ */
 const sequelize = new Sequelize(
     process.env.DB_DATABASE,
     process.env.DB_USER,
