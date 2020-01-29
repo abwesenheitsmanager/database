@@ -7,7 +7,7 @@
 const buildResponse = (successful, res) => {
     return {
         successful,
-        [successful ? 'data': 'error']: res
+        [successful ? "data": "error"]: res
     };
 };
 

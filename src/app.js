@@ -1,6 +1,6 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import path from 'path'
+import express from "express";
+import dotenv from "dotenv";
+import path from "path";
 
 /**
  * Config for dotenv to find the .env file
