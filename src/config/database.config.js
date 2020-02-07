@@ -1,23 +1,26 @@
 import Sequelize from "sequelize";
 
+const database = process.env.DB_DATABASE;
+const user = process.env.DB_USER;
+const password = process.env.DB_PASSWORD;
+const host = process.env.DB_HOST;
+const dialect = process.env.DB_DIALECT;
+const port = process.env.DB_PORT;
+
+console.log(process.env);
+
 /**
  * Config for database Connection
  */
 const sequelize = new Sequelize(
-    process.env.DB_DATABASE,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
+    database,
+    user,
+    password,
     {
-        host: process.env.DB_HOST,
-        dialect: process.env.DB_DIALECT
-    },
-    {
-        pool: {
-            max: 5,
-            min: 0,
-            acquire: 30000,
-            idle: 10000
-        }
+        port: port,
+        logging: console.log,
+        host: host,
+        dialect: dialect
     }
 );
 

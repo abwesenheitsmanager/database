@@ -1,16 +1,11 @@
 import express from "express";
-import dotenv from "dotenv";
-import path from "path";
-import sequelize from "./config/database.config";
+import './config/env.config';
+import {sequelize} from "./config/database.config";
 import {buildResponse} from "./helper/response";
-
-/**
- * Config for dotenv to find the .env file
- */
-dotenv.config({ path: path.join(process.cwd(), '../.env')});
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
 
 async function testDatabase() {
     try {
@@ -20,6 +15,7 @@ async function testDatabase() {
         console.log(buildResponse(false, e));
     }
 }
+
 
 /**
  * Starting listening on this PORT
